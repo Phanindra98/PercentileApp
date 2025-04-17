@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Button, StyleSheet, Alert} from 'react-native';
+import {TextInput, Button, StyleSheet, Alert} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {ActivateSmartLock} from '../../../assets/svg';
 import {GlobalStore} from '../../../storage/stores';
+import {Container, Title} from './styles';
 
 const Login = ({navigation}: any) => {
   const [email, setEmail] = useState('');
@@ -21,8 +22,8 @@ const Login = ({navigation}: any) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+    <Container>
+      <Title>Login</Title>
       <AntDesign name="user" size={30} color="#900" />
       <ActivateSmartLock />
       <TextInput
@@ -41,24 +42,11 @@ const Login = ({navigation}: any) => {
         secureTextEntry
       />
       <Button title="Login" onPress={handleLogin} />
-    </View>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 16,
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 24,
-    textAlign: 'center',
-    marginBottom: 24,
-    fontFamily: 'JosefinSans-Bold',
-    color: '#000',
-  },
   input: {
     height: 40,
     borderColor: '#ccc',
